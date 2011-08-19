@@ -1,0 +1,21 @@
+{
+	"name": "mesher",
+	"description": "Utilities for interfacing with a Steelmesh server",
+	"tags": ["database", "couchdb", "steelmesh"],
+	"author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+	"version": "0.1.0",
+	"main": "index",
+	"repository": {
+		"type": "git",
+		"url": "http://github.com/sidelab/mesher.git"
+	},
+	"engines": { "node": "0.4.x || 0.5.x" },
+	"dependencies": {
+	    "comfy": "0.1.x"
+	},
+	"bugs": {
+		"web": "http://github.com/DamonOehlman/comfy/issues"
+	},
+	"contributors": [
+	]
+}
