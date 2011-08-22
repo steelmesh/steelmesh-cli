@@ -11,7 +11,8 @@
 	},
 	"engines": { "node": "0.4.x || 0.5.x" },
 	"dependencies": {
-	    "comfy": "0.1.x"
+	    "comfy": "0.1.x",
+	    "optimist": "0.2.x"
 	},
 	"bugs": {
 		"web": "http://github.com/DamonOehlman/comfy/issues"

@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+
+var path = require('path'),
+	mesher = require('../lib/mesher'),
+	argv = require('optimist')
+		.default('action', 'list')
+		.default('app', 'app.js')
+		.argv;
+	
+mesher.run(argv);
