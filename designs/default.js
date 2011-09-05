@@ -1,3 +1,20 @@
+function mapApps(doc) {
+    var reLib = new RegExp('^lib', 'i'),
+        libs = [];
+
+    if (doc._attachments) {
+        for (var key in doc._attachments) {
+            if (reLib.test(key)) {
+                libs[libs.length] = key;
+            } // if
+        } // for
+    } // if
+    
+    emit(doc.title || doc._id, {
+        libs: libs
+    });
+}
+
 function mapRoutes(doc) {
     if (doc.routes) {
         doc.routes.forEach(function(route, index) {
@@ -26,22 +43,22 @@ function mapRoutes(doc) {
     } // if
 } // mapRoutes
 
-function mapLibs(doc) {
-    var reLib = new RegExp('^lib', 'i');
-
-    if (doc._attachments) {
-        for (var key in doc._attachments) {
-            if (reLib.test(key)) {
-                emit(key);
-            } // if
+function mapJobs(doc) {
+    if (doc.jobs) {
+        for (var key in doc.jobs) {
+            emit(key, doc.jobs[key]);
         } // for
-    } // if
-}
+    }
+} // mapJobs
 
 module.exports = {
     views: {
-        libs: {
-            map: mapLibs
+        apps: {
+            map: mapApps
+        },
+        
+        jobs: {
+            map: mapJobs
         },
         
         routes: {
