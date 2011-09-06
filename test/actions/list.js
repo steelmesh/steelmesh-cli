@@ -8,7 +8,7 @@ module.exports = function(mesh) {
                 mesh.list(this.callback);
             }, 
             
-            'initialization successful': function(err, couch) {
+            'initialization successful': function(err, results) {
                 assert.ok(! err);
             }
         }

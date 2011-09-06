@@ -22,12 +22,24 @@ function progInit() {
 			var action = mesh[program.args] || mesh.update;
 	
 			// run the action
-			action.call(mesh, program, function(err) {
+			action.call(mesh, program, function(err, results) {
 				if (err) {
 					process.stdout.write(err.red + '\n');
 				}
 				else {
-					process.stdout.write('Operation successful'.green + '\n');
+					if (results && typeof results.length != 'undefined') {
+						process.stdout.write('>> mesh:' + program.args + '\n');
+						
+						if (results.length == 0) {
+							process.stdout.write('No results\n');
+						} // if
+						
+						results.forEach(function(line) {
+							process.stdout.write('- ' + line + '\n');
+						});
+					}
+					
+					process.stdout.write('Operation succcessful\n'.green);
 				}
 			});
 		}
