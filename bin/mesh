@@ -8,6 +8,9 @@ var meshcli = require('../lib/mesh'),
 function progInit() {
 	program.usage('[options] action (default action = update)');
 	program.option('-p, --path [path]', 'Target output path (default to current directory)');
+	program.options('--hostname [hostname]', 'CouchDB host (default: localhost)');
+	program.options('--port [port]', 'CouchDB port (default: 5984)');
+	program.options('--protocol [protocol]', 'CouchDB protocol (default: http)');
 	program.parse(process.argv);
 	
 	meshcli.init(program, function(err, mesh) {
