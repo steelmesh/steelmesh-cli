@@ -3,14 +3,17 @@
 var meshcli = require('../lib/mesh'),
 	fs = require('fs'),
 	path = require('path'),
-	program = require('commander');
+	program = require('commander'),
+	colors = require('colors');
 	
 function progInit() {
 	program.usage('[options] action (default action = update)');
 	program.option('-p, --path [path]', 'Target output path (default to current directory)');
-	program.options('--hostname [hostname]', 'CouchDB host (default: localhost)');
-	program.options('--port [port]', 'CouchDB port (default: 5984)');
-	program.options('--protocol [protocol]', 'CouchDB protocol (default: http)');
+	program.option('--hostname [hostname]', 'CouchDB host (default: localhost)');
+	program.option('--port [port]', 'CouchDB port (default: 5984)');
+	program.option('--protocol [protocol]', 'CouchDB protocol (default: http)');
+	program.option('--app [appid]', 'The id of the application (default: top level dir for path)');
+	program.option('--db [db]', 'The steelmesh application database that this will be published to. (default: steelmesh)');
 	program.parse(process.argv);
 	
 	meshcli.init(program, function(err, mesh) {
@@ -19,7 +22,14 @@ function progInit() {
 			var action = mesh[program.args] || mesh.update;
 	
 			// run the action
-			action.call(mesh, program);
+			action.call(mesh, program, function(err) {
+				if (err) {
+					process.stdout.write(err.red + '\n');
+				}
+				else {
+					process.stdout.write('Operation successful'.green + '\n');
+				}
+			});
 		}
 		else {
 			console.error(err);

@@ -35,7 +35,8 @@ A sample configuration file is shown below:
 ```js
 {
 	"hostname": "couchdb.example.com",
-	"port": 80
+	"port": 80,
+	"app": "meshtest"
 }
 ```
 
@@ -54,3 +55,7 @@ Displayed below is a list of options that can be provided in a configuration fil
 - __port__ (`--port`): The port CouchDB is running on. Default is `5984`.
 
 - __protocol__ (`--protocol`): The protocol being used to communicate with Couch. Default is `http`.
+
+- __db__ (`--db`): The database that the application data will be pushed to. Default is `steelmesh`.  __NOTE:__ This is not the application that will be used to store application data but rather the db containing the steelmesh apps for distribution in the steelmesh cluster.  We generally recommend you don't change this setting...
+
+- __app__ (`--app`): The id of the application being uploaded. The default for this is the name of project folder.  For example if your project resides in `meshapps/test` then the id of the app would be `test` by default.

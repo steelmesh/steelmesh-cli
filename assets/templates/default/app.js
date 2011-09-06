@@ -1,6 +1,4 @@
 module.exports = {
-    _id: 'template',
-    
     routes: [
         '/time => test.getTime',
         

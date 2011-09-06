@@ -1,35 +1,35 @@
 {
-	"name": "mesh",
-	"description": "Command line tools for interfacing with a steelmesh installation",
-	"tags": ["database", "couchdb", "steelmesh"],
-	"author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-	"version": "0.0.1",
-	"main": "index",
-	"bin": { "mesh": "./bin/mesh" },
-	
-	"engines": { "node": "0.4.x || 0.5.x" },
-	
-	"dependencies": {
-	    "comfy": "0.1.x",
-	    "colors": "0.5.x",
-	    "couchapp": "0.8.x",
-	    "commander": "0.1.x",
-	    "ncp": "0.1.x"
-	},
-	
+    "name": "mesh",
+    "description": "Command line tools for interfacing with a steelmesh installation",
+    "tags": ["database", "couchdb", "steelmesh"],
+    "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+    "version": "0.0.1",
+    "main": "index",
+    "bin": { "mesh": "./bin/mesh" },
+    
+    "engines": { "node": "0.4.x || 0.5.x" },
+    
+    "dependencies": {
+        "comfy": "0.1.x",
+        "colors": "0.5.x",
+        "couchapp": "0.8.x",
+        "commander": "0.1.x",
+        "ncp": "0.1.x"
+    },
+    
     "devDependencies": {
         "vows": "0.5.x"
     },
-	
-	"repository": {
-		"type": "git",
-		"url": "http://github.com/steelmesh/mesh.git"
-	},
-	
-	"bugs": {
-		"web": "http://github.com/steelmesh/mesh/issues"
-	},
+    
+    "repository": {
+        "type": "git",
+        "url": "http://github.com/steelmesh/mesh.git"
+    },
+    
+    "bugs": {
+        "web": "http://github.com/steelmesh/mesh/issues"
+    },
 
-	"contributors": [
-	]
+    "contributors": [
+    ]
 }

@@ -1,6 +1,7 @@
 var vows = require('vows'),
     assert = require('assert'),
     cli = require('../lib/mesh'),
+    path = require('path'),
     rePathGreenslide = /^(.*?\/mesh)\/?.*$/i,
     meshOpts = {
         path: process.cwd().replace(rePathGreenslide, '$1/test/project')
@@ -28,8 +29,20 @@ suite.addBatch({
             assert.ok(mesh);
         },
         
+        'mesh options have been initialized to defaults': function(err, mesh) {
+            assert.equal(mesh.hostname, 'localhost');
+            assert.equal(mesh.protocol, 'http');
+            assert.equal(mesh.port, 5984);
+            assert.equal(mesh.app, path.basename(meshOpts.path));
+            assert.equal(mesh.db, 'steelmesh');
+        },
+        
         'the mesh instance has an create method': function(err, mesh) {
             checkMethod(mesh, 'create');
+        },
+        
+        'the mesh instance has a list method': function(err, mesh) {
+            checkMethod(mesh, 'list');
         },
         
         'the mesh instance has an update method': function(err, mesh) {
