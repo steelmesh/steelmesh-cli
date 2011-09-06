@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-var greenslide = require('../lib/mesh'),
+var meshcli = require('../lib/mesh'),
 	fs = require('fs'),
 	path = require('path'),
 	program = require('commander');
@@ -10,11 +10,18 @@ function progInit() {
 	program.option('-p, --path [path]', 'Target output path (default to current directory)');
 	program.parse(process.argv);
 	
-	// determine the greenslide action to run
-	var action = mesh[program.args] || mesh.update;
+	meshcli.init(program, function(err, mesh) {
+		if (! err) {
+			// determine the greenslide action to run
+			var action = mesh[program.args] || mesh.update;
 	
-	// run the action
-	action(program);
+			// run the action
+			action.call(mesh, program);
+		}
+		else {
+			console.error(err);
+		}
+	});
 } // progInit
 	
 fs.readFile(path.join(__dirname, '../package.json'), 'utf8', function(err, contents) {

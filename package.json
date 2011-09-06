@@ -5,13 +5,16 @@
 	"author": "Damon Oehlman <damon.oehlman@sidelab.com>",
 	"version": "0.1.0",
 	"main": "index",
+	"bin": { "mesh": "./bin/mesh" },
+	
 	"engines": { "node": "0.4.x || 0.5.x" },
 	
 	"dependencies": {
 	    "comfy": "0.1.x",
 	    "colors": "0.5.x",
 	    "couchapp": "0.8.x",
-	    "commander": "0.1.x"
+	    "commander": "0.1.x",
+	    "ncp": "0.1.x"
 	},
 	
     "devDependencies": {
