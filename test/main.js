@@ -4,7 +4,7 @@ var vows = require('vows'),
     path = require('path'),
     rePathGreenslide = /^(.*?\/mesh)\/?.*$/i,
     meshOpts = {
-        path: process.cwd().replace(rePathGreenslide, '$1/test/project')
+        path: process.cwd().replace(rePathGreenslide, '$1/test/test-project')
     };
     
 var suite = vows.describe('Project Initialization'),
@@ -41,12 +41,12 @@ suite.addBatch({
             checkMethod(mesh, 'create');
         },
         
-        'the mesh instance has a list method': function(err, mesh) {
-            checkMethod(mesh, 'list');
-        },
-        
         'the mesh instance has an update method': function(err, mesh) {
             checkMethod(mesh, 'update');
+        },
+        
+        'the mesh instance has a list method': function(err, mesh) {
+            checkMethod(mesh, 'list');
         },
         
         'the actions testing is successful': function(err, mesh) {

@@ -1,6 +1,6 @@
 var path = require('path'),
     assert = require('assert'),
-    projectDir = path.resolve(__dirname, '../project');
+    projectDir = path.resolve(__dirname, '../test-project');
 
 module.exports = function(mesh) {
     return {
