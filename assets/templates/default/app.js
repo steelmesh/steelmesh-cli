@@ -7,6 +7,11 @@ module.exports = {
             handler: 'test.getCount'
         },
         
+        {
+            path: '/uuid',
+            handler: 'test.uuid'
+        },
+        
         { 
             path: '/html-test',
             handler: 'test.genHTML'

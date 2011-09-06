@@ -1,4 +1,5 @@
 var time = require('./time-helper'),
+    uuid = require('node-uuid'),
     counter = 0;
 
 exports.getTime = function(mesh, callback, queryParams, req, res) {
@@ -10,6 +11,12 @@ exports.getTime = function(mesh, callback, queryParams, req, res) {
 exports.getCount = function(mesh, callback, queryParams, req, res) {
     callback({
         value: counter++
+    });
+};
+
+exports.uuid = function(mesh, callback, queryParams, req, res) {
+    callback({
+        uuid: uuid()
     });
 };
 

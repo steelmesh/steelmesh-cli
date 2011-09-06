@@ -1,6 +1,7 @@
 function mapApps(doc) {
-    var reLib = new RegExp('^lib', 'i'),
-        libs = [];
+    var reLib = new RegExp('^(lib|node_modules)', 'i'),
+        libs = [],
+        node_modules = [];
 
     if (doc._attachments) {
         for (var key in doc._attachments) {
