@@ -2,9 +2,9 @@ var vows = require('vows'),
     assert = require('assert'),
     cli = require('../lib/mesh'),
     path = require('path'),
-    rePathGreenslide = /^(.*?\/mesh)\/?.*$/i,
+    rePathMesh = /^(.*?\/mesh)\/?.*$/i,
     meshOpts = {
-        path: process.cwd().replace(rePathGreenslide, '$1/test/test-project')
+        path: process.cwd().replace(rePathMesh, '$1/test/test-project')
     };
     
 var suite = vows.describe('Project Initialization'),

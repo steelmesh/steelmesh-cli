@@ -4,44 +4,51 @@ var meshcli = require('../lib/mesh'),
 	fs = require('fs'),
 	path = require('path'),
 	program = require('commander'),
-	colors = require('colors');
+	out = require('out');
 	
 function progInit() {
 	program.usage('[options] action (default action = update)');
 	program.option('-p, --path [path]', 'Target output path (default to current directory)');
-	program.option('--hostname [hostname]', 'CouchDB host (default: localhost)');
-	program.option('--port [port]', 'CouchDB port (default: 5984)');
-	program.option('--protocol [protocol]', 'CouchDB protocol (default: http)');
-	program.option('--app [appid]', 'The id of the application (default: top level dir for path)');
-	program.option('--db [db]', 'The steelmesh application database that this will be published to. (default: steelmesh)');
+	program.option(',--hostname [hostname]', 'CouchDB host (default: localhost)');
+	program.option(',--port [port]', 'CouchDB port (default: 5984)');
+	program.option(',--protocol [protocol]', 'CouchDB protocol (default: http)');
+	program.option(',--user [user]', 'CouchDB username (default: none)');
+	program.option(',--pass [pass]', 'CouchDB password (default: none)');
+	program.option(',--app [appid]', 'The id of the application (default: top level dir for path)');
+	program.option(',--db [db]', 'The steelmesh application database that this will be published to. (default: steelmesh)');
 	program.parse(process.argv);
 	
 	meshcli.init(program, function(err, mesh) {
 		if (! err) {
 			// determine the greenslide action to run
-			var action = mesh[program.args] || mesh.update;
-	
-			// run the action
-			action.call(mesh, program, function(err, results) {
-				if (err) {
-					process.stdout.write(err.red + '\n');
-				}
-				else {
-					if (results && typeof results.length != 'undefined') {
-						process.stdout.write('>> mesh:' + program.args + '\n');
-						
-						if (results.length == 0) {
-							process.stdout.write('No results\n');
-						} // if
-						
-						results.forEach(function(line) {
-							process.stdout.write('- ' + line + '\n');
-						});
+			var action = mesh[program.args];
+			
+			if (action && action.call) {
+				// run the action
+				action.call(mesh, program, function(err, results) {
+					if (err) {
+						process.stdout.write(err.red + '\n');
 					}
+					else {
+						if (results && typeof results.length != 'undefined') {
+							process.stdout.write('>> mesh:' + program.args + '\n');
+						
+							if (results.length == 0) {
+								out('No results');
+							} // if
+						
+							results.forEach(function(line) {
+								out('- {0}', line);
+							});
+						}
 					
-					process.stdout.write('Operation succcessful\n'.green);
-				}
-			});
+						out('!{green}Operation succcessful');
+					}
+				});
+			}
+			else {
+				out('Unable to run action: !{underline}{0}', program.args);
+			} // if..else
 		}
 		else {
 			console.error(err);
