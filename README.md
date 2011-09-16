@@ -38,6 +38,12 @@ Well, it is if you are running a local CouchDB instance prepped to receive steel
 
 The local `mesh` command line tool also comes bundled with the required node modules to run a local development server.  This feature allows you to scaffold, build and test your apps locally before deploying them to a running steelmesh instance.
 
+Simple run the following command:
+
+```
+mesh run
+```
+
 ## Using Configuration Files
 
 While not created by default, a `config.json` file can be provided in an application path and values in this file will be used when running mesh.  In terms of priority, options specified on the command-line have precedence, followed by values in the config file, then falling back to default values if not specified.
