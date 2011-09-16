@@ -1,5 +1,5 @@
 function mapApps(doc) {
-    var reLib = new RegExp('^(lib|node_modules)', 'i'),
+    var reLib = new RegExp('^(lib|node_modules|resources)', 'i'),
         libs = [],
         node_modules = [];
 
