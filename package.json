@@ -13,10 +13,10 @@
         "comfy": "0.1.x",
         "couchapp": "0.8.x",
         "commander": "0.1.x",
+        "express": "2.4.x",
         "ncp": "0.1.x",
         "out": "0.x.x",
-        "connect": "1.7.x",
-        "quip": "0.0.2"
+        "underscore": "1.1.x"
     },
     
     "devDependencies": {
