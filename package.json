@@ -3,7 +3,7 @@
     "description": "Command line tools for interfacing with a steelmesh installation",
     "tags": ["database", "couchdb", "steelmesh"],
     "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "main": "index",
     "bin": { "mesh": "./bin/mesh" },
     
