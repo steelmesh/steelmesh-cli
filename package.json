@@ -3,7 +3,7 @@
     "description": "Command line tools for interfacing with a steelmesh installation",
     "tags": ["database", "couchdb", "steelmesh"],
     "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-    "version": "0.0.2",
+    "version": "0.0.3",
     "main": "index",
     "bin": { "mesh": "./bin/mesh" },
     
@@ -11,9 +11,9 @@
     
     "dependencies": {
         "comfy": "0.1.x",
+        "express": "2.4.x",
         "couchapp": "0.8.x",
         "commander": "0.1.x",
-        "express": "2.4.x",
         "ncp": "0.1.x",
         "out": "0.x.x",
         "underscore": "1.1.x"
