@@ -2,26 +2,26 @@ var time = require('./time-helper'),
     uuid = require('node-uuid'),
     counter = 0;
 
-exports.getTime = function(mesh, callback, queryParams, req, res) {
-    callback({
+exports.getTime = function(req, res) {
+    res.json({
         time: time.getTime()
     });
 };
 
-exports.getCount = function(mesh, callback, queryParams, req, res) {
-    callback({
+exports.getCount = function(req, res) {
+    res.json({
         value: counter++
     });
 };
 
-exports.uuid = function(mesh, callback, queryParams, req, res) {
-    callback({
+exports.uuid = function(req, res) {
+    res.json({
         uuid: uuid()
     });
 };
 
-exports.genHTML = function(mesh, callback, queryParams, req, res, next) {
-    res.ok('<body>Some test html</body>');
+exports.genHTML = function(req, res, next) {
+    res.send('<body>Some test html</body>');
 };
 
 exports.testJob = function(mesh) {
