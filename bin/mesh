@@ -27,7 +27,7 @@ function progInit() {
 				// run the action
 				action.call(mesh, program, function(err, results) {
 					if (err) {
-						process.stdout.write(err.red + '\n');
+						out('!{red}' + err);
 					}
 					else {
 						if (results && typeof results.length != 'undefined') {
