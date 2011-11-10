@@ -9,13 +9,11 @@ var meshcli = require('../lib/mesh'),
 function progInit() {
 	program.usage('[options] action (default action = update)');
 	program.option('-p, --path [path]', 'Target output path (default to current directory)');
-	program.option(',--hostname [hostname]', 'CouchDB host (default: localhost)');
-	program.option(',--port [port]', 'CouchDB port (default: 5984)');
-	program.option(',--protocol [protocol]', 'CouchDB protocol (default: http)');
-	program.option(',--user [user]', 'CouchDB username (default: none)');
-	program.option(',--pass [pass]', 'CouchDB password (default: none)');
+	program.option(',--couchurl [couchurl]', 'CouchDB url (default: http://localhost:5984/)');
+	program.option(',--user [user]', 'CouchDB username for BasicAuth (default: none)');
+	program.option(',--pass [pass]', 'CouchDB password for BasicAuth (default: none)');
 	program.option(',--app [appid]', 'The id of the application (default: top level dir for path)');
-	program.option(',--db [db]', 'The steelmesh application database that this will be published to. (default: steelmesh)');
+	program.option(',--meshdb [meshdb]', 'The steelmesh application database that this will be published to. (default: steelmesh)');
 	program.parse(process.argv);
 	
 	meshcli.init(program, function(err, mesh) {
