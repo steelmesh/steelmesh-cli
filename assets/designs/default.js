@@ -1,6 +1,7 @@
 function mapApps(doc) {
     var key, 
-        reLib = new RegExp('^(lib|node_modules|resources|views)', 'i'),
+        syncPaths = (doc.syncPaths || ['resources']).join('|'),
+        reLib = new RegExp('^(lib|node_modules|' + syncPaths + ')\/', 'i'),
         ignoreKey = new RegExp('^(_|attachments)', 'i'),
         node_modules = [],
         appData = {
