@@ -12,7 +12,7 @@ function progInit() {
 	program.option(',--couchurl [couchurl]', 'CouchDB url (default: http://localhost:5984/)');
 	program.option(',--user [user]', 'CouchDB username for BasicAuth (default: none)');
 	program.option(',--pass [pass]', 'CouchDB password for BasicAuth (default: none)');
-	program.option(',--app [appid]', 'The id of the application (default: top level dir for path)');
+	program.option(',--appid [appid]', 'The id of the application (default: top level dir for path)');
 	program.option(',--meshdb [meshdb]', 'The steelmesh application database that this will be published to. (default: steelmesh)');
 	program.parse(process.argv);
 	
