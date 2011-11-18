@@ -25,5 +25,5 @@ exports.genHTML = function(req, res, next) {
 };
 
 exports.testJob = function(mesh) {
-    mesh.log('ran test job 2');
+    mesh.log.info('ran test job 2');
 };
