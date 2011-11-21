@@ -29,14 +29,14 @@ function progInit() {
 					}
 					else {
 						if (results && typeof results.length != 'undefined') {
-							process.stdout.write('>> mesh:' + program.args + '\n');
+							out('\n!{grey}> mesh: !{yellow}{0}', program.args);
 						
 							if (results.length == 0) {
-								out('No results');
+								out('- no results');
 							} // if
 						
 							results.forEach(function(line) {
-								out('- {0}', line);
+								out('- ' + line);
 							});
 						}
 					
