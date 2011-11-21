@@ -19,7 +19,7 @@ function progInit() {
 	meshcli.init(program, function(err, mesh) {
 		if (! err) {
 			// determine the greenslide action to run
-			var action = mesh[program.args];
+			var action = mesh.getAction(program.args);
 			
 			if (action && action.call) {
 				// run the action
@@ -40,7 +40,7 @@ function progInit() {
 							});
 						}
 					
-						out('!{green}Operation succcessful');
+						// out('!{green}Operation succcessful');
 					}
 				});
 			}
