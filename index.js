@@ -1,1 +1,1 @@
-module.exports = require('./lib/mesh');
+exports.MeshApp = require('./lib/meshapp').MeshApp;
