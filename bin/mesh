@@ -22,6 +22,8 @@ function progInit() {
 			var action = mesh.getAction(program.args);
 			
 			if (action && action.call) {
+				out(':: !{yellow}{0}', program.args);
+				
 				// run the action
 				action.call(mesh, program, function(err, results) {
 					if (err) {
@@ -29,14 +31,12 @@ function progInit() {
 					}
 					else {
 						if (results && typeof results.length != 'undefined') {
-							out('\n!{grey}> mesh: !{yellow}{0}', program.args);
-						
 							if (results.length == 0) {
-								out('- no results');
+								out(':: no results');
 							} // if
 						
 							results.forEach(function(line) {
-								out('- ' + line);
+								out(':: ' + line);
 							});
 						}
 					
