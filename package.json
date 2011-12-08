@@ -7,7 +7,7 @@
     "steelmesh"
   ],
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "main": "index",
   "bin": {
     "mesh": "./bin/mesh"
