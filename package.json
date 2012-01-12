@@ -1,13 +1,13 @@
 {
   "name": "mesh",
-  "description": "Command line tools for interfacing with a steelmesh installation",
+  "description": "Command line tools for working with a steelmesh installation",
   "tags": [
     "database",
     "couchdb",
     "steelmesh"
   ],
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "version": "0.2.4",
+  "version": "0.1.0",
   "main": "index",
   "bin": {
     "mesh": "./bin/mesh"
@@ -16,19 +16,9 @@
     "node": ">= 0.4.x < 0.7.0"
   },
   "dependencies": {
-    "async": "0.1.x",
-    "attachmate": "0.0.x",
+    "attachmate": "0.1.x",
     "debug": "*",
-    "express": "2.5.x",
-    "commander": "0.4.x",
-    "request": "2.2.x",
-    "nano": "0.9.x",
-    "ncp": "0.2.x",
-    "out": "0.x.x",
-    "underscore": "1.2.x"
-  },
-  "devDependencies": {
-    "vows": "0.5.x"
+    "scaffolder": ">= 0.0.3"
   },
   "repository": {
     "type": "git",
