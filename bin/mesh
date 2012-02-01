@@ -1,3 +1,11 @@
 #!/usr/bin/env node
 
-require('scaffolder').create(module).run('check');
+var path = require('path'),
+    mesh = require('cleave').repl('mesh>');
+    
+// load the actions and run
+mesh
+    .history()
+    .loadActions(path.resolve(__dirname, '../lib/actions'), function() {
+        mesh.run(process.argv.slice(2).join(' '));
+    });

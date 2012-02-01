@@ -17,8 +17,9 @@
   },
   "dependencies": {
     "attachmate": "0.1.x",
+    "async": "0.1.x",
     "debug": "*",
-    "scaffolder": ">= 0.0.3"
+    "cleave": "0.1.x"
   },
   "repository": {
     "type": "git",
