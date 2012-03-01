@@ -18,8 +18,11 @@
   "dependencies": {
     "attachmate": "0.1.x",
     "async": "0.1.x",
+    "climate": "0.2.x",
     "debug": "*",
-    "cleave": "0.1.x"
+    "fstream": "0.1.x",
+    "out": "*",
+    "tar": "0.1.x"
   },
   "repository": {
     "type": "git",

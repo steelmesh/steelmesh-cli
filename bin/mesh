@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 var path = require('path'),
-    mesh = require('cleave').repl('mesh>');
+    mesh = require('climate').repl('mesh>');
     
 // load the actions and run
 mesh
