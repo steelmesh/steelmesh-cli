@@ -7,7 +7,7 @@
     "steelmesh"
   ],
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "main": "./lib/appbuilder.js",
   "bin": {
     "mesh": "./bin/mesh"
