@@ -8,7 +8,7 @@
   ],
   "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
   "version": "0.3.0",
-  "main": "index",
+  "main": "./lib/appbuilder.js",
   "bin": {
     "mesh": "./bin/mesh"
   },
