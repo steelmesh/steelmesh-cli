@@ -1,5 +1,5 @@
 {
-  "name": "mesh",
+  "name": "steelmesh-cli",
   "description": "Command line tools for working with a steelmesh installation",
   "tags": [
     "database",
@@ -28,10 +28,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/steelmesh/mesh.git"
+    "url": "git://github.com/steelmesh/steelmesh-cli.git"
   },
   "bugs": {
-    "url": "http://github.com/steelmesh/mesh/issues"
+    "url": "http://github.com/steelmesh/steelmesh-cli/issues"
   },
   "contributors": []
 }
