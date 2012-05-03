@@ -1,11 +1,2 @@
 #!/usr/bin/env node
-
-var path = require('path'),
-    mesh = require('climate').repl('mesh>');
-    
-// load the actions and run
-mesh
-    .history()
-    .loadActions(path.resolve(__dirname, '../lib/actions'), function() {
-        mesh.run(process.argv.slice(2).join(' '));
-    });
+require('scaffolder')();
