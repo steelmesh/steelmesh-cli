@@ -28,7 +28,7 @@
   },
   "pluginDependencies": {
     "express": "3.0.x",
-    "routerules": "0.0.x"
+    "routerules": "0.1.x"
   },
   "repository": {
     "type": "git",
