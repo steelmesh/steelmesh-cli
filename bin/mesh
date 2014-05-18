@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-var AppBuilder = require('../lib/appbuilder');
+var AppBuilder = require('../');
 var builder = new AppBuilder();
 
 require('scaffolder')({
