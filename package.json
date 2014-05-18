@@ -1,7 +1,7 @@
 {
   "name": "steelmesh-cli",
   "description": "Command line tools for working with a steelmesh installation",
-  "tags": [
+  "keywords": [
     "database",
     "couchdb",
     "steelmesh"
@@ -11,9 +11,6 @@
   "main": "lib/mesh.js",
   "bin": {
     "mesh": "./bin/mesh"
-  },
-  "engines": {
-    "node": ">= 0.4.x < 0.9.0"
   },
   "dependencies": {
     "attachmate": "0.1.x",
@@ -36,6 +33,5 @@
   },
   "bugs": {
     "url": "http://github.com/steelmesh/steelmesh-cli/issues"
-  },
-  "contributors": []
+  }
 }
