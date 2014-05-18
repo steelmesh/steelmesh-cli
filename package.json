@@ -6,7 +6,7 @@
     "couchdb",
     "steelmesh"
   ],
-  "author": "Damon Oehlman <damon.oehlman@sidelab.com>",
+  "author": "Damon Oehlman <damon.oehlman@gmail.com>",
   "version": "0.3.12",
   "main": "lib/mesh.js",
   "bin": {
@@ -33,5 +33,11 @@
   },
   "bugs": {
     "url": "http://github.com/steelmesh/steelmesh-cli/issues"
-  }
+  },
+  "homepage": "https://github.com/steelmesh/steelmesh-cli",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "license": "Apache 2.0"
 }
