@@ -1,3 +1,4 @@
+var debug = require('debug')('steelmesh-cli:pack');
 var path = require('path');
 var tar = require('tar');
 var fstream = require('fstream');
@@ -5,9 +6,7 @@ var zlib = require('zlib');
 
 // action description
 exports.desc = 'Package an application for steelmesh distribution';
-
 exports.args = {
-
 };
 
 // export runner
@@ -16,6 +15,8 @@ exports.run = function(opts, callback) {
   var sourcePath = builder.getSourcePath();
   var targetPackage = path.resolve(builder.pkgInfo.name + '-' + builder.pkgInfo.version + '.tar.gz');
   var log = builder.log.bind(builder, callback);
+
+  debug('attempting to pack files into package: ' + targetPackage);
 
   // pack the files into a tar.gz archive
   // code courtesy of @izs wonderful section from npm
