@@ -41,7 +41,7 @@ exports.args = {
 };
 
 exports.run = function(opts, callback) {
-  var appFile = path.resolve(opts.path, 'app.js');
+  var appFile = path.resolve(opts.path || process.cwd(), 'app.js');
   var sourcePath = opts.path ? path.resolve(opts.path) : this.builder.getSourcePath();
   var data = this.builder.pkgInfo;
   var targetUrl = opts.url || 'http://localhost:5984/steelmesh';
