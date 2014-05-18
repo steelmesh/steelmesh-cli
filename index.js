@@ -39,9 +39,11 @@ function AppBuilder() {
 
   // initialise members
   this.pkgInfo = {
-    name: path.basename(process.cwd),
-    version: '0.0.0'
+    name: path.basename(process.cwd)
   };
+
+  // add the version to the pkgInfo (done this way to prevent gendocs being helpful)
+  this.pkgInfo.version = '0.0.0';
 
   this.workingDir = process.cwd();
 }
