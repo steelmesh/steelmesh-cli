@@ -38,18 +38,20 @@ exports.run = function(opts, callback) {
     // initialise the application
     app = express();
 
-    // parse the route rules from the appData
-    ruleset = routerules(appData.routes, { basePath: handlerPath });
+    // load the routes
+    routerules.load(path.resolve('routes.txt'), { basePath: handlerPath }, function(err, ruleset) {
+      // mount the rules at a particular mountpoint
+      ruleset.mount(appData.mountpoint || path.basename(basePath));
 
-    // mount the rules at a particular mountpoint
-    ruleset.mount(appData.mountpoint || path.basename(basePath));
+      // bind the rules with valid express handlers
+      ruleset.rules.forEach(function(rule) {
+        debug('registering route: ' + rule.pattern);
+        app[rule.method.toLowerCase()](rule.pattern, rule.handler);
+      });
 
-    // bind the rules with valid express handlers
-    ruleset.rules.forEach(function(rule) {
-      app[rule.method.toLowerCase()](rule.pattern, rule.handler);
+      scaffolder.out('running application on port: ' + targetPort);
+      app.listen(targetPort);
     });
 
-    scaffolder.out('running application on port: ' + targetPort);
-    app.listen(targetPort);
   });
 };
