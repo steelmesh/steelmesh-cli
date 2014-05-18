@@ -5,6 +5,33 @@ var async = require('async');
 var path = require('path');
 var fs = require('fs');
 
+/**
+  # steelmesh-cli
+
+  This module installs the command-line tools for working with a steelmesh server.
+
+  ## Commands
+
+  ```
+  mesh run
+  ```
+
+  Run a local development server that tests the application.
+
+  ```
+  mesh pack
+  ```
+
+  Package the application resources into a `.tar.gz` file that can be uploaded
+  into steelmesh using the admin dashboard.
+
+  ```
+  mesh publish
+  ```
+
+  Publish the application to a steelmesh CouchDB server.
+**/
+
 function AppBuilder() {
   if (! (this instanceof AppBuilder)) {
     return new AppBuilder();
