@@ -3,8 +3,5 @@ var AppBuilder = require('../lib/appbuilder');
 var builder = new AppBuilder();
 
 require('scaffolder')({
-    builder: builder,
-    init: [
-        builder.init.bind(builder)
-    ]
+  builder: builder
 });
