@@ -40,7 +40,7 @@ function AppBuilder() {
   // initialise members
   this.pkgInfo = {
     name: path.basename(process.cwd),
-    version: '0.0.0'
+    version: '0.4.0'
   };
 
   this.workingDir = process.cwd();
